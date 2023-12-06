@@ -5,6 +5,49 @@ public class project_bioskop7{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        
+        String userKrywn = "Andin", passKrywn = "karyawan45", userPelanggan = "Pelanggan", passPelanggan = "pelanggan123";
+        System.out.println("======================");
+        System.out.println("|         MENU       |");
+        System.out.println("======================");
+        System.out.println("Pilih jenis pengguna: ");
+        System.out.println("1. Karyawan");
+        System.out.println("2. Pelanggan");
+        System.out.print("Masukkan pilihan: ");
+        int pilih = sc.nextInt();
+        
+        if (pilih == 1) {
+            System.out.println("===============");
+            System.out.println("|     LOGIN    |");
+            System.out.println("================");
+            System.out.print("Masukkan Nama Anda: ");
+            String username = sc.nextLine();
+            sc.nextLine();
+            System.out.print("Masukkan Nomor ID Anda: ");
+            String password = sc.nextLine();
+                if (username.equals(userKrywn) || password.equals(passKrywn)){
+                    System.out.println("LOGIN BERHASIL");
+                    System.out.println("Selamat datang karyawan dengan nama: " + userKrywn + " !");
+                } else {
+                    System.out.println("MAAF LOGIN ANDA GAGAL, SILAHKAN COBA LAGI.");
+                }
+        
+        } else if (pilih == 2) {
+            System.out.println("=====================");
+            System.out.println("|       LOGIN       |");
+            System.out.println("=====================");
+            System.out.print("Username: ");
+            String username = sc.nextLine();
+            sc.nextLine();
+            System.out.print("Password: ");
+            String password = sc.nextLine();
+                if (username.equalsIgnoreCase(userPelanggan) || password.equalsIgnoreCase(passPelanggan)){
+                    System.out.println("LOGIN BERHASIL SILAHKAN KE MENU SELANJUTNYA >>");
+                } else {
+                System.out.println("MAAF LOGIN ANDA GAGAL, SILAHKAN COBA LAGI.");
+                }   
+                System.out.println();
+
         String[] menu = { "", "Popcorn", "Churros", "Kentang Goreng", "Orange Juice", "Jasmine Tea", "Mineral Water",
                 "Lemon Tea", "coca cola" };
         String lagi = "", movie = "";
@@ -430,6 +473,11 @@ public class project_bioskop7{
             System.out.println("=========================================");
             System.out.println("||Total harga : Rp " + totalHarga);
             System.out.println("===Terima kasih telah memesan di Bioskop kami!===");
+
+        }
+
+        } else {
+             System.out.println("Pilihan anda tidak valid");
 
         }
     }
